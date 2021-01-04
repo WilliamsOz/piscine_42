@@ -1,0 +1,5 @@
+Credentials cache: API:BB2C7DD2-B1D1-4C77-A1F0-DF779C522BD8
+        Principal: wiozsert@42.FR
+
+  Issued                Expires               Principal
+Aug  3 12:33:10 2020  Aug 10 12:33:06 2020  krbtgt/42.FR@42.FR

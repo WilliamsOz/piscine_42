@@ -1,0 +1,60 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_list.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wiozsert <wiozsert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/25 16:34:47 by user42            #+#    #+#             */
+/*   Updated: 2020/08/21 16:39:12 by wiozsert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "list.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+int		ascending(int a, int b)
+{
+	return (a <= b);
+}
+
+//t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
+//{
+
+//}
+
+int main(void)
+{
+	t_list	*list;
+	t_list	*tmp;
+
+	tmp = list;
+	list = (t_list*)malloc(sizeof(t_list) * 1);
+	list->next = (t_list*)malloc(sizeof(t_list) * 1);
+	list->next->next = (t_list*)malloc(sizeof(t_list) * 1);
+	list->next->next->next = (t_list*)malloc(sizeof(t_list) * 1);
+	list->next->next->next->next = (t_list*)malloc(sizeof(t_list) * 1);
+	list->next->next->next->next->next = NULL;
+
+	list->data = 42;
+	list->next->data = 21;
+	list->next->next->data = 10;
+	list->next->next->next->data = 5;
+	list->next->next->next->next->data = 1;
+	printf("Voici la liste non triee :\n");
+	while (list)
+	{
+		printf("%d\n", list->data);
+		list = list->next;
+	}
+	list = tmp;
+	printf("Maintenant la liste triee :\n");
+	list = sort_list(list, &ascending);
+	while (list)
+	{
+		printf("%d\n", list->data);
+		list = list->next;
+	}
+	return (0);
+}
